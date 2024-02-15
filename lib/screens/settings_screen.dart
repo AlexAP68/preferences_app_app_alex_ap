@@ -28,14 +28,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
         drawer: const SideMenu(),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
+          //Añadimos un SingleChildScrollView para que se pueda hacer scroll si la pantalla es pequeña
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                //Añadimos los textos que queremos mostrar en este caso configuración
                 const Text('Configuració',
                     style:
                         TextStyle(fontSize: 45, fontWeight: FontWeight.w300)),
                 const Divider(),
+                //Añadimos los elementos que queremos modificar
                 SwitchListTile(
                     value: Preferences.isDarkMode,
                     title: const Text('Dark Mode'),
@@ -46,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       setState(() {});
                     }),
                 const Divider(),
+                //En este caso añadimos un RadioListTile para poder seleccionar el género
                 RadioListTile<int>(
                     value: 1,
                     groupValue: Preferences.genere,
@@ -64,6 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       setState(() {});
                     }),
                 Divider(),
+                //Añadimos un TextFormField para poder modificar el nombre
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextFormField(

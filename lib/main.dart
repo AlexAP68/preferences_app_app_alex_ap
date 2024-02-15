@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'screens/screens.dart';
 
+//async y await para asegurarnos que Preferences se inicializa antes de que se ejecute el runApp
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.init();
@@ -16,6 +17,7 @@ void main()async {
     child: MyApp()));
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
+      //Añadimos las rutas de las pantallas
       initialRoute: HomeScreen.routerName,
       routes: {
         HomeScreen.routerName: (_) => const HomeScreen(),

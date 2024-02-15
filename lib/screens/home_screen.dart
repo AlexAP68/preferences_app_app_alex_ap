@@ -17,10 +17,15 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
+            //Añadimos los textos que queremos mostrar
+
+            //Tema
             Text('Dark Mode: ${Preferences.isDarkMode}'),
             Divider(),
+            //Género
             Text('Gènere: ${Preferences.genere}'),
             Divider(),
+            //Nombre
             Text('Nom d\'usuari: ${Preferences.nom}'),
             Divider()
           ],

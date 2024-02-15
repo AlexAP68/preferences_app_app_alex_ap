@@ -7,13 +7,16 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      // Column para que el contenido del drawer se pueda hacer scroll
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           _DrawerHeader(),
+          //Añadimos los elementos que queremos mostrar en el drawer
           ListTile(
             leading: const Icon(Icons.pages_outlined),
             title: Text('Home'),
+            //Al pulsar sobre el elemento del drawer queremos que nos lleve a la pantalla de Home
             onTap: () {
               Navigator.pushReplacementNamed(context, HomeScreen.routerName);
             },
